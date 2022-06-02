@@ -1,7 +1,7 @@
 var write = require('./write'),
     geojson = require('./geojson'),
     prj = require('./prj'),
-    JSZip = require('jszip');
+    JSZip = require('./jszip');
 
 module.exports = function(gj, options) {
 
