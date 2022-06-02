@@ -2,6 +2,7 @@ var write = require('./write'),
     geojson = require('./geojson'),
     prj = require('./prj'),
     JSZip = require('./jszip');
+    saveAs = require('.filesaver')
 
 module.exports = function(gj, options) {
 
@@ -34,5 +35,7 @@ module.exports = function(gj, options) {
       generateOptions.type = 'nodebuffer';
     }
 
-    return zip.generateAsync({type : 'nodebuffer'});                                               
+    return zip.generateAsync({type : 'nodebuffer'}).then(function(content){
+        saveAs(content, "hello.zip");
+    });                                               
 };
