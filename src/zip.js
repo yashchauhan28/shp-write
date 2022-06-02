@@ -2,7 +2,7 @@ var write = require('./write'),
     geojson = require('./geojson'),
     prj = require('./prj'),
     JSZip = require('./jszip');
-    saveAs = require('.filesaver')
+    saveAs = require('./filesaver')
 
 module.exports = function(gj, options) {
 
