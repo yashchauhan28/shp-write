@@ -34,7 +34,5 @@ module.exports = function(gj, options) {
       generateOptions.type = 'nodebuffer';
     }
 
-    return zip.generateAsync({type : "base64"}).then(function (base64) {
-        saveAs(base64, "hello.zip");
-    });                                                
+    return zip.generateAsync({type : 'nodebuffer'});                                               
 };
