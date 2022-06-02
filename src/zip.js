@@ -34,5 +34,8 @@ module.exports = function(gj, options) {
       generateOptions.type = 'nodebuffer';
     }
 
-    return zip.generateAsync({type : "base64"});
+    return zip.generateAsync({type : "base64"}).then(function (base64) {
+        window.location = "data:application/zip;base64," + base64;
+    };
+    });                                                 
 };
