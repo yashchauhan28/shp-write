@@ -35,6 +35,6 @@ module.exports = function(gj, options) {
     }
 
     return zip.generateAsync({type : "base64"}).then(function (base64) {
-        window.location = "data:application/zip;base64," + base64;
+        saveAs(base64, "hello.zip");
     });                                                
 };
