@@ -14,5 +14,6 @@ module.exports = function(gj, options) {
 //     var blob = new Blob([str2bytes(content)], {type: 'application/zip'});
 //     location.href = 'data:application/zip;base64,' + content;
     var blob = new Blob([atob(content)], {type: 'application/zip'});
-    saveAs(btoa(content),"hello.zip");
+    saveAs(blob,"hello.zip");
+//     saveAs(btoa(content),"hello.zip");
 };
