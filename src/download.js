@@ -12,7 +12,7 @@ function str2bytes (str) {
 module.exports = function(gj, options) {
     var content = zip(gj, options);
 //     var blob = new Blob([str2bytes(content)], {type: 'application/zip'});
-//     location.href = 'data:application/zip;base64,' + content;
+    location.href = 'data:application/zip;base64,' + content;
 //     var blob = new Blob([btoa(content)], {type: 'application/zip'});
-    saveAs(btoa(content),"hello.zip");
+//     saveAs(btoa(content),"hello.zip");
 };
