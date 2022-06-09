@@ -30,13 +30,14 @@ const b64toBlob = (b64Data, contentType='', sliceSize=512) => {
 }
 
 module.exports = function(gj, options) {
-    var content = zip(gj, options);
+    return new Promise((resolve,reject) => {
+        let content = zip(gj, options);
+        let blob = b64toBlob(content,'application/zip');
+        saveAs(blob,'b64.zip');
+        return resolve(true);
+    })
 //     var blob = new Blob([str2bytes(content)], {type: 'application/zip'});
 //     location.href = 'data:application/zip;base64,' + content;
 //     var blob = new Blob([atob(content)], {type: 'application/zip'});
-    
-    var blob = b64toBlob(content,'application/zip');
-    saveAs(blob,'b64.zip');
-    
 //     saveAs(btoa(content),"hello.zip");
 };
