@@ -34,7 +34,7 @@ module.exports = function(gj, options) {
         let content = zip(gj, options);
         let blob = b64toBlob(content,'application/zip');
         saveAs(blob,'b64.zip');
-        return resolve(true);
+        resolve(true);
     })
 //     var blob = new Blob([str2bytes(content)], {type: 'application/zip'});
 //     location.href = 'data:application/zip;base64,' + content;
