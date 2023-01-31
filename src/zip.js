@@ -31,9 +31,9 @@ module.exports = function(gj, options) {
 
     var generateOptions = { compression:'STORE' };
 
-    if (!process.browser) {
-      generateOptions.type = 'nodebuffer';
-    }
+//     if (!process.browser) {
+//       generateOptions.type = 'nodebuffer';
+//     }
 
 //     return zip.generateAsync({type : 'base64'}).then(function(content){
 //         saveAs(content, "hello.zip");
