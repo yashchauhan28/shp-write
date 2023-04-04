@@ -29,11 +29,11 @@ const b64toBlob = (b64Data, contentType='', sliceSize=512) => {
   return blob;
 }
 
-module.exports = function(gj, options) {
+module.exports = function(gj, options, fileName='B64') {
     return new Promise((resolve,reject) => {
         let content = zip(gj, options);
         let blob = b64toBlob(content,'application/zip');
-        saveAs(blob,'b64.zip');
+        saveAs(blob, fileName + '.zip');
         resolve(true);
     })
 //     var blob = new Blob([str2bytes(content)], {type: 'application/zip'});
